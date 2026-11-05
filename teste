@@ -1,0 +1,20 @@
+class Tempo:
+    def __init__(self, horas, minutos):
+        self.horas = horas
+        self.minutos = minutos
+
+    def __add__(self, outro_tempo):
+        return Tempo(self.horas+outro_tempo.horas, self.minutos+outro_tempo.minutos)
+
+    def __eq__(self, outro_tempo):
+        return self.horas == outro_tempo.horas and self.minutos == outro_tempo.minutos
+
+    def __str__(self):
+        return f'{self.horas}:{self.minutos}'
+
+t1 = Tempo(2, 30)
+t2 = Tempo(4, 45)
+t3=t1+t2
+print(t3)
+print(t1==t2)
+print(t3==t3)
